@@ -82,6 +82,7 @@ function App() {
   const getData = (e) => {
     setInput(e.target.value)
     setDisplay(false)
+    console.clear()
   }
   
   return (
