@@ -1,0 +1,73 @@
+[
+    {
+        "moba": [
+            "League of Legends",
+            "Dota 2",
+            "Smite",
+            "Mobile Legends: Bang Bang",
+            "Arena of Valor",
+            "Pokemon Unite",
+            "AirMech"
+        ]
+    },
+    {
+        "fps": [
+            "Counter Strike Global Offensive",
+            "Valorant",
+            "Call of Duty",
+            "Battlefield",
+            "Tom Clancy's Rainbow Six Siege",
+            "Overwatch",
+            "Paladins",
+            "Team Fortress 2"
+        ]
+    },
+    {
+        "rts": [
+            "StarCraft",
+            "Generals Command and Conquer",
+            "Company of Heroes",
+            "Company of Heroes 2",
+            "Age of Empires"
+        ]
+    },
+    {
+        "mmorpg": [
+            "Elder Scrolls Online",
+            "Flyff",
+            "Path of Exile",
+            "Runescape",
+            "Guild Wars 2",
+            "Dragon Nest"
+        ]
+    },
+    {
+        "survivalgames" : [
+            "Minecraft",
+            "Terraria",
+            "Unturned",
+            "The Forest",
+            "Don't Starve",
+            "Subnautica"
+        ]
+    },
+    {
+        "singleplayergames": [
+            "The Last of Us",
+            "The Witcher 3: Wild Hunt",
+            "Borderlands",
+            "Borderlands 2",
+            "Borderlands 3",
+            "Dishonored",
+            "Dishonored 2",
+            "Dying Light",
+            "Dying Light 2",
+            "Undertale",
+            "Dead Cells",
+            "Far Cry 1",
+            "Far Cry 2",
+            "Far Cry 3",
+            "Far Cry 4"
+        ]
+    }
+]
