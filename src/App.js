@@ -13,6 +13,7 @@ function App() {
     e.preventDefault()
     switch(input){
       case 'moba':
+        console.log(games[0].moba[Math.floor(Math.random() * games[0].moba.length)])
         console.log(games[0].moba)
         break
       case 'fps':
@@ -28,6 +29,7 @@ function App() {
         console.log(games[4].survivalgames)
         break
       case 'singleplayer games':
+      case 'rpg':
         console.log(games[5].singleplayergames)
         break
       default: 
@@ -40,6 +42,7 @@ function App() {
       case 'moba':
       case 'MOBA':
       case 'Moba':
+        //let moba = <b>{games[0].moba[Math.floor(Math.random() * games[0].moba.length)]}</b> (can be put inside a variable which is cool)
         return <p>You should try playing: <b>{games[0].moba[Math.floor(Math.random() * games[0].moba.length)]}</b></p>
       case 'fps':
       case 'FPS':
@@ -84,7 +87,7 @@ function App() {
     setDisplay(false)
     console.clear()
   }
-  
+
   return (
     <div className="App">
       <form onSubmit={onpress}>
@@ -92,13 +95,14 @@ function App() {
         <input
         className='input'
         type='text' 
-        placeholder='type here the video game genre you want to choose'
+        placeholder='type here the video game genre that you like to play'
         onChange={getData} required/>
         <button type='submit' className='submit-button' onClick={() => setDisplay(true)} title='Press me :)'>Submit</button>
       </form>
       {
         display? <Result /> : null 
       }
+      <p className='bottom-text'>This webapp will display what game you should try and play according on what video game genre you have entered on the input field.</p>
     </div>
   );
 }

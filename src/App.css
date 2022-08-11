@@ -12,6 +12,7 @@
 
 .App .input {
   text-align: center;
+  font-size: 15.5px;
   outline: none;
   height: 2rem;
   width: 25rem;
@@ -40,5 +41,10 @@
   border: 1.5px solid gray;
   background-color: lightgrey;
   cursor: pointer;
+}
+
+.App .bottom-text {
+  margin-top: 13.5rem;
+  padding: 5px 5px;
 }
 
