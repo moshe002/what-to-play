@@ -43,8 +43,23 @@
   cursor: pointer;
 }
 
+.App .bottom-elements {
+  margin-top: 12rem;
+}
+
 .App .bottom-text {
-  margin-top: 13.5rem;
-  padding: 5px 5px;
+  padding: 5px 20px;
+}
+
+.genre-text {
+  color: black;
+  outline: none;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.genre-text:hover {
+  font-size: 20px;
+  text-decoration: underline;
 }
 

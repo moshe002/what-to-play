@@ -9,77 +9,74 @@ function App() {
   const [input, setInput] = useState('')
   const [display, setDisplay] = useState(false)
 
+  const [game, setGame] = useState('')
   const onpress = (e) => {
     e.preventDefault()
     switch(input){
       case 'moba':
-        console.log(games[0].moba[Math.floor(Math.random() * games[0].moba.length)])
-        console.log(games[0].moba)
-        break
-      case 'fps':
-        console.log(games[1].fps)
-        break
-      case 'rts':
-        console.log(games[2].rts)
-        break
-      case 'mmorpg':
-        console.log(games[3].mmorpg)
-        break
-      case 'survival games':
-        console.log(games[4].survivalgames)
-        break
-      case 'singleplayer games':
-      case 'rpg':
-        console.log(games[5].singleplayergames)
-        break
-      default: 
-        console.log('Game genre not added yet, wait for further updates.')
-    }
-  }
-
-  function Result(){
-    switch(input){
-      case 'moba':
       case 'MOBA':
       case 'Moba':
-        //let moba = <b>{games[0].moba[Math.floor(Math.random() * games[0].moba.length)]}</b> (can be put inside a variable which is cool)
-        return <p>You should try playing: <b>{games[0].moba[Math.floor(Math.random() * games[0].moba.length)]}</b></p>
+      case 'Multiplayer Online Battle Arena':
+        setGame('You should try playing: ' + games[0].moba[Math.floor(Math.random() * games[0].moba.length)])
+        let game1 = games[0].moba[Math.floor(Math.random() * games[0].moba.length)]
+        console.log('chosen game: ' + game1)
+        break
       case 'fps':
       case 'FPS':
       case 'Fps':
       case 'shooting game':
-        return <p>You should try playing: <b>{games[1].fps[Math.floor(Math.random() * games[1].fps.length)]}</b></p>
+        setGame('You should try playing: ' + games[1].fps[Math.floor(Math.random() * games[1].fps.length)])
+        let game2 = games[1].fps[Math.floor(Math.random() * games[1].fps.length)]
+        console.log('chosen game: ' + game2)
+        break
       case 'rts':
       case 'RTS':
       case 'Rts':
-        return <p>You should try playing: <b>{games[2].rts[Math.floor(Math.random() * games[2].rts.length)]}</b></p>
+        setGame('You should try playing: ' + games[2].rts[Math.floor(Math.random() * games[2].rts.length)])
+        let game3 = games[2].rts[Math.floor(Math.random() * games[2].rts.length)]
+        console.log('chosen game: ' + game3)
+        break
       case 'mmorpg':
       case 'MMORPG':
       case 'Mmorpg':
-        return <p>You should try playing: <b>{games[3].mmorpg[Math.floor(Math.random() * games[3].mmorpg.length)]}</b></p>
+        setGame('You should try playing: ' + games[3].mmorpg[Math.floor(Math.random() * games[3].mmorpg.length)])
+        let game4 = games[3].mmorpg[Math.floor(Math.random() * games[3].mmorpg.length)]
+        console.log('chosen game: ' + game4)
+        break
       case 'survival games':
       case 'survival': 
       case 'Survival':
-        return <p>You should try playing: <b>{games[4].survivalgames[Math.floor(Math.random() * games[4].survivalgames.length)]}</b></p>
+        setGame('You should try playing: ' + games[4].survivalgames[Math.floor(Math.random() * games[4].survivalgames.length)])
+        let game5 = games[4].survivalgames[Math.floor(Math.random() * games[4].survivalgames.length)]
+        console.log('chosen game: ' + game5)
+        break
       case 'singleplayer games':
       case 'singleplayer':
       case 'Singleplayer':
       case 'RPG':
-      case 'rpg':
       case 'Role-Playing Games':
       case 'role-playing games':
       case 'Role Playing Games':
       case 'role playing games':
       case 'Role playing games':
-        return <p>You should try playing: <b>{games[5].singleplayergames[Math.floor(Math.random() * games[5].singleplayergames.length)]}</b></p>
+      case 'rpg':
+        setGame('You should try playing: ' + games[5].singleplayergames[Math.floor(Math.random() * games[5].singleplayergames.length)])
+        let game6 = games[5].singleplayergames[Math.floor(Math.random() * games[5].singleplayergames.length)]
+        console.log('chosen game: ' + game6)
+        break
       default: 
-        if(input === ''){
-          return <p></p>
-        }
-        else {
-          return <p><b>Wrong spelling or game genre not added yet, wait for further updates.</b></p>
-        }
+        setGame('Game genre not added yet, wait for further updates.')
+        console.log('Game genre not added yet, wait for further updates.')
     }
+  }
+
+  function Result(){
+    //let moba = <b>{games[0].moba[Math.floor(Math.random() * games[0].moba.length)]}</b> //(can be put inside a variable which is cool)
+    return <p><b>{game}</b></p>
+  }
+
+  function Genre(){
+    return <a href='https://en.wikipedia.org/wiki/List_of_video_game_genres' rel="noreferrer" target='_blank' className='genre-text'>Click me to know all the video game genres!</a>
   }
 
   const getData = (e) => {
@@ -102,7 +99,10 @@ function App() {
       {
         display? <Result /> : null 
       }
-      <p className='bottom-text'>This webapp will display what game you should try and play according on what video game genre you have entered on the input field.</p>
+      <div className='bottom-elements'>
+        <Genre />
+        <p className='bottom-text'>This webapp will display what game you should try and play according on what video game genre you have entered on the input field.</p>
+      </div>
     </div>
   );
 }
