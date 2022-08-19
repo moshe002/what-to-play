@@ -7,7 +7,8 @@
             "Mobile Legends: Bang Bang",
             "Arena of Valor",
             "Pokemon Unite",
-            "AirMech"
+            "AirMech",
+            "Dota 1"
         ]
     },
     {
@@ -68,6 +69,33 @@
             "Far Cry 2",
             "Far Cry 3",
             "Far Cry 4"
+        ]
+    },
+    {
+        "battleroyales": [
+            "PUBG",
+            "Apex Legends",
+            "Fortnite",
+            "Call of Duty: Warzone",
+            "Free Fire",
+            "Spellbreak",
+            "PUBG Mobile"
+        ]
+    },
+    {
+        "horror": [
+            "Amnesia",
+            "Alien: Isolation",
+            "Outlast",
+            "Outlast 2",
+            "Until Dawn",
+            "Little Nightmares",
+            "Dead Space",
+            "Dead Space 2",
+            "Dead Space 3",
+            "The Evil Within",
+            "The Evil Within 2",
+            "Resident Evil"
         ]
     }
 ]
