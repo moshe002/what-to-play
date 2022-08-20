@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "caption": "starcraft",
+        "icon": "images/starcraft.jpg"
+    },
+    {
+        "id": 2,
+        "caption": "generals command and conquer",
+        "icon": "images/generals command and conquer.jpg"
+    },
+    {
+        "id": 3,
+        "caption": "company of heroes",
+        "icon": "images/company of heroes.jpg"
+    },
+    {
+        "id": 4,
+        "caption": "company of heroes 2",
+        "icon": "images/company of heroes 2.png"
+    },
+    {
+        "id": 5,
+        "caption": "age of empires",
+        "icon": "images/age of empires.jpg"
+    }    
+]
+

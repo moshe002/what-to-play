@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './App.css';
 import JSONFile from './games.json'
+import JSONPics from './gameIcons.json'
 
 function App() {
 
   const games = JSONFile
+  const gamesPic = JSONPics
 
   const [input, setInput] = useState('')
   const [display, setDisplay] = useState(false)
@@ -15,8 +17,9 @@ function App() {
     switch(input.toLowerCase()){
       case 'moba':
       case 'multiplayer online battle arena':
-        setGame(<p>You should try playing: <b>{games[0].moba[Math.floor(Math.random() * games[0].moba.length)]}</b></p>)
-        let game1 = games[0].moba[Math.floor(Math.random() * games[0].moba.length)]
+        let firstGame = games[0].moba[Math.floor(Math.random() * games[0].moba.length)]
+        setGame(<p style={{padding : '10px 10px'}}>You should try playing: <b style={{color : 'lightgray'}}>{firstGame}</b></p>)
+        let game1 = firstGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game1)
         break
       case 'fps':
@@ -27,16 +30,19 @@ function App() {
       case 'shooter game':
       case 'shooting game':
       case 'shooting games':
-        setGame(<p>You should try playing: <b>{games[1].fps[Math.floor(Math.random() * games[1].fps.length)]}</b></p>)
-        let game2 = games[1].fps[Math.floor(Math.random() * games[1].fps.length)]
+        let secondGame = games[1].fps[Math.floor(Math.random() * games[1].fps.length)]
+        setGame(<p style={{padding : '10px 10px'}}>You should try playing: <b style={{ color : 'lightgray'}}>{secondGame}</b></p>)
+        let game2 = secondGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game2)
         break
       case 'rts':
       case 'real time strategy':
       case 'real-time strategy':
-        setGame(<p>You should try playing: <b>{games[2].rts[Math.floor(Math.random() * games[2].rts.length)]}</b></p>)
-        let game3 = games[2].rts[Math.floor(Math.random() * games[2].rts.length)]
+        let thirdGame = games[2].rts[Math.floor(Math.random() * games[2].rts.length)]
+        setGame(<p style={{padding : '10px 10px'}}>You should try playing: <b style={{ color : 'lightgray'}}>{thirdGame}</b></p>)
+        let game3 = thirdGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game3)
+        //if(game3 === gamePics[Math.floor(Math.random() * gamePics.length)]) { setPic(gamePics[Math.floor(Math.random() * gamePics.length)]) } else { setPic(<p>no picture available</p>) }
         break
       case 'mmorpg':
       case 'massively multiplayer online role-playing games':
@@ -45,14 +51,16 @@ function App() {
       case 'massive multiplayer online role-playing games':
       case 'massive multiplayer online role playing game':
       case 'massive multiplayer online role-playing game':
-        setGame(<p>You should try playing: <b>{games[3].mmorpg[Math.floor(Math.random() * games[3].mmorpg.length)]}</b></p>)
-        let game4 = games[3].mmorpg[Math.floor(Math.random() * games[3].mmorpg.length)]
+        let fourthGame = games[3].mmorpg[Math.floor(Math.random() * games[3].mmorpg.length)]
+        setGame(<p style={{padding : '10px 10px'}}>You should try playing: <b style={{ color : 'lightgray'}}>{fourthGame}</b></p>)
+        let game4 = fourthGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game4)
         break
       case 'survival games':
       case 'survival': 
-        setGame(<p>You should try playing: <b>{games[4].survivalgames[Math.floor(Math.random() * games[4].survivalgames.length)]}</b></p>)
-        let game5 = games[4].survivalgames[Math.floor(Math.random() * games[4].survivalgames.length)]
+        let fifthGame = games[4].survivalgames[Math.floor(Math.random() * games[4].survivalgames.length)]
+        setGame(<p style={{padding : '10px 10px'}}>You should try playing: <b style={{ color : 'lightgray'}}>{fifthGame}</b></p>)
+        let game5 = fifthGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game5)
         break
       case 'singleplayer games':
@@ -65,28 +73,34 @@ function App() {
       case 'role playing game':
       case 'role-playing game':
       case 'rpg':
-        setGame(<p>You should try playing: <b>{games[5].singleplayergames[Math.floor(Math.random() * games[5].singleplayergames.length)]}</b></p>)
-        let game6 = games[5].singleplayergames[Math.floor(Math.random() * games[5].singleplayergames.length)]
+        let sixthGame = games[5].singleplayergames[Math.floor(Math.random() * games[5].singleplayergames.length)]
+        setGame(<p style={{padding : '10px 10px'}}>You should try playing: <b style={{ color : 'lightgray'}}>{sixthGame}</b></p>)
+        let game6 = sixthGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game6)
         break
       case 'battle royale':
       case 'battle royale games':
       case 'battle royale game':
-        setGame(<p>You should try playing: <b>{games[6].battleroyales[Math.floor(Math.random() * games[6].battleroyales.length)]}</b></p>)
-        let game7 = games[6].battleroyales[Math.floor(Math.random() * games[6].battleroyales.length)]
+      case 'battle royal games':
+      case 'battle royal game':
+      case 'battle royal': 
+        let seventhGame = games[6].battleroyales[Math.floor(Math.random() * games[6].battleroyales.length)]
+        setGame(<p style={{padding : '10px 10px'}}>You should try playing: <b style={{ color : 'lightgray'}}>{seventhGame}</b></p>)
+        let game7 = seventhGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game7)
         break
       case 'horror games':
       case 'horror':
       case 'horror game':
       case 'ungo-ungo':
-      case 'ungo ungo': 
-        setGame(<p>You should try playing: <b>{games[7].horror[Math.floor(Math.random() * games[7].horror.length)]}</b></p>)
-        let game8 = games[7].horror[Math.floor(Math.random() * games[7].horror.length)]
+      case 'ungo ungo':
+        let eigthGame = games[7].horror[Math.floor(Math.random() * games[7].horror.length)]
+        setGame(<p style={{padding : '10px 10px'}}>You should try playing: <b style={{ color : 'lightgray'}}>{eigthGame}</b></p>)
+        let game8 = eigthGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game8)
-        break
+        break 
       default: 
-        setGame(<p><b>Game genre not added yet, wait for further updates.</b></p>)
+        setGame(<p style={{padding : '10px 10px'}}><b>Game genre not added yet, wait for further updates.</b></p>)
         console.log('Game genre not added yet, wait for further updates.')
     }
   }
@@ -94,6 +108,10 @@ function App() {
   function Result(){
     //let moba = <b>{games[0].moba[Math.floor(Math.random() * games[0].moba.length)]}</b> //(can be put inside a variable which is cool)
     return <>{game}</>
+  }
+
+  function Picture(){
+    return <img src={gamesPic[0].icon} alt='game pic'/>
   }
 
   function Genre(){
@@ -112,7 +130,7 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={onpress}>
-        <h1>Not sure what video game to play?</h1>
+        <h1 className='h1-text'>Not sure what video game to play?</h1>
         <input
         className='input'
         type='text' 
@@ -126,6 +144,9 @@ function App() {
       {
         display && <Result /> 
       }
+      {
+        display && <Picture />
+      }
       <div className='bottom-elements'>
         <Genre />
         <p className='bottom-text'>This webapp will display what game you should try and play according on what video game genre you have entered on the input field.</p>
@@ -135,3 +156,6 @@ function App() {
 }
 
 export default App;
+// npm start to run the app in the browser
+// npm run deploy so that changes can be deployed in github pages
+//%PUBLIC_URL%/

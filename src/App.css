@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+.App .h1-text {
+  color: beige;
+  opacity: 95%;
+}
+
 .App form {
   display: flex;
   flex-direction: column;
@@ -13,14 +18,15 @@
 } 
 
 .App .input {
+  color: whitesmoke;
   text-align: center;
   font-size: 15.5px;
   outline: none;
   height: 2rem;
   width: 25rem;
   border: none;
-  border-bottom: 1.5px solid black;
-  opacity: 40%;
+  border-bottom: 1px solid black;
+  opacity: 60%;
   padding: 2px 2px;
   transition: 0.5s;
   background-color: transparent;
@@ -29,7 +35,7 @@
 .App .input:focus {
   outline: none;
   opacity: 100%;
-  border-bottom: 1.5px solid black;
+  border-bottom: 1.2px solid white;
 } 
 
 .App .input::placeholder {
@@ -59,17 +65,21 @@
 
 .App .bottom-text {
   padding: 5px 20px;
+  color: white;
+  opacity: 35%;
 }
 
 .genre-text {
-  color: black;
+  color: beige;
   outline: none;
   text-decoration: none;
   transition: 0.25s;
+  opacity: 65%;
 }
 
 .genre-text:hover {
   font-size: 18px;
   text-decoration: underline;
+  opacity: 100%;
 }
 
