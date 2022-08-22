@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import './App.css';
 import JSONFile from './games.json'
-import JSONPics from './gameIcons.json'
+import Picture from './gamePicture.jsx'
 
 function App() {
 
   const games = JSONFile
-  const gamesPic = JSONPics
 
   const [input, setInput] = useState('')
   const [display, setDisplay] = useState(false)
@@ -43,7 +42,7 @@ function App() {
         let game3 = thirdGame.replaceAll(' ', '').toLowerCase()
         console.log('chosen game: ' + game3)
         //if(game3 === gamePics[Math.floor(Math.random() * gamePics.length)]) { setPic(gamePics[Math.floor(Math.random() * gamePics.length)]) } else { setPic(<p>no picture available</p>) }
-        break
+        return game3
       case 'mmorpg':
       case 'massively multiplayer online role-playing games':
       case 'massively multiplayer online role playing games':
@@ -110,10 +109,6 @@ function App() {
     return <>{game}</>
   }
 
-  function Picture(){
-    return <img src={gamesPic[0].icon} alt='game pic'/>
-  }
-
   function Genre(){
     return <a href='https://en.wikipedia.org/wiki/List_of_video_game_genres' 
     rel="noreferrer" 
@@ -145,7 +140,7 @@ function App() {
         display && <Result /> 
       }
       {
-        display && <Picture />
+        display && <Picture input={onpress}/>
       }
       <div className='bottom-elements'>
         <Genre />
