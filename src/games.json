@@ -58,18 +58,11 @@
             "The Last of Us",
             "The Witcher 3: Wild Hunt",
             "Borderlands",
-            "Borderlands 2",
-            "Borderlands 3",
             "Dishonored",
-            "Dishonored 2",
             "Dying Light",
-            "Dying Light 2",
             "Undertale",
             "Dead Cells",
-            "Far Cry 1",
-            "Far Cry 2",
-            "Far Cry 3",
-            "Far Cry 4"
+            "Far Cry 3"
         ]
     },
     {
@@ -86,17 +79,10 @@
     {
         "horror": [
             "Amnesia",
-            "Alien: Isolation",
             "Outlast",
-            "Outlast 2",
             "Until Dawn",
             "Little Nightmares",
-            "Dead Space",
-            "Dead Space 2",
-            "Dead Space 3",
-            "The Evil Within",
-            "The Evil Within 2",
-            "Resident Evil"
+            "Dead Space"
         ]
     }
 ]
