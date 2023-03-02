@@ -89,6 +89,7 @@
 
 .game-h1-result {
   color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .App .game-img {
@@ -96,4 +97,11 @@
   -moz-box-shadow: 0 0 3px black;
   -webkit-box-shadow: 0 0 3px black;
   box-shadow: 0 1px 15px black;
+}
+
+.App .game-details {
+  font-weight: 600;
+  color: white;
+  font-size: larger;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

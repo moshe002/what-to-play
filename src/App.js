@@ -6,7 +6,7 @@ function App() {
   const [input, setInput] = useState('');
   const [game, setGame] = useState([]);
   const [index, setIndex] = useState(0);
-  const [noGame, setNoGame] = useState(false);
+  const [details, setDetails] = useState(false);
 
   const options = {
     method: 'GET',
@@ -27,10 +27,10 @@ function App() {
       .then(response => {
         //console.log(response);
         setGame(response);
+        setDetails(true);
       });
     } catch(err) {
       console.log(err.message);
-      setNoGame(true);
     }
     
   }; // gets the value on submit
@@ -38,6 +38,8 @@ function App() {
   const handleChange = (e) => {
     setInput(e.target.value)
   }; // reads the input
+
+   //console.log(game);
 
   return (
     <div className="App">
@@ -56,17 +58,17 @@ function App() {
               title='click me gamer'>Pick a game
             </button>
       </form>
-      {
-        noGame && <Nogame />
-      }
       <div>
         <h1 className='game-h1-result'>{game[index]?.title}</h1>
         <img className='game-img' src={game[index]?.thumbnail} alt="" />
+        {
+          details && <Details game={game} index={index} />
+        }
       </div>
       <div className='bottom-elements'>
         <Genre />
         <p className='bottom-text'>
-          This webapp will display what game you should try and play according on what video game genre you have entered on the input field.
+          <br></br>Available Game Genres are: shooter, anime, sports, sandbox, 3d, 2d, action, sci-fi and more.
           <br></br>All data and information is from FreeToGame.com.
         </p>
       </div>
@@ -81,8 +83,13 @@ function Genre(){ // genre component, redirects you to a website that shows list
   className='genre-text'>Click me to know all the video game genres!</a>
 };
 
-function Nogame(){
-  return <h2>Game genre not found.</h2>
+function Details({ game, index }){
+  return(
+    <>
+      <p className='game-details'>Platform: {game[index]?.platform}</p>
+      <p className='game-details'>Release Date: {game[index]?.release_date}</p>
+    </>    
+  )
 };
 
 export default App;
