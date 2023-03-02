@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': 'f59ce02494msh9df2436cab1638ep18b077jsn3a0ca1152035',
+      'X-RapidAPI-Key': "f59ce02494msh9df2436cab1638ep18b077jsn3a0ca1152035",
       'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
     }
   };
