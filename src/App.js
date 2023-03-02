@@ -5,7 +5,8 @@ function App() {
 
   const [input, setInput] = useState('');
   const [game, setGame] = useState([]);
-  //const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [noGame, setNoGame] = useState(false);
 
   const options = {
     method: 'GET',
@@ -17,16 +18,21 @@ function App() {
   
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(input);
-    //setIndex(prev => prev + 1);
+    //console.log(input);
+    setIndex(prev => prev + 1);
 
-    await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${input}&platform=pc`, options)
+    try {
+      await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${input}&platform=pc`, options)
       .then(response => response.json())
       .then(response => {
-        console.log(response);
+        //console.log(response);
         setGame(response);
-      })
-      .catch(err => console.error(err));
+      });
+    } catch(err) {
+      console.log(err.message);
+      setNoGame(true);
+    }
+    
   }; // gets the value on submit
 
   const handleChange = (e) => {
@@ -40,7 +46,7 @@ function App() {
           <input
             className='input'
             type='text' 
-            placeholder='type here the video game genre (Shooter, Sci-Fi, Anime, MOBA)'
+            placeholder='type any video game genre (Shooter, Sci-Fi, Anime, MOBA, etc.)'
             onChange={handleChange}
             value={input} 
             required
@@ -50,20 +56,19 @@ function App() {
               title='click me gamer'>Pick a game
             </button>
       </form>
+      {
+        noGame && <Nogame />
+      }
       <div>
-        <ul>
-        {
-          game.map((game, i) => {
-            return(
-              <li key={i}>{game[1].id}</li>
-            )
-          })
-        }
-        </ul>
+        <h1 className='game-h1-result'>{game[index]?.title}</h1>
+        <img className='game-img' src={game[index]?.thumbnail} alt="" />
       </div>
       <div className='bottom-elements'>
         <Genre />
-        <p className='bottom-text'>This webapp will display what game you should try and play according on what video game genre you have entered on the input field.</p>
+        <p className='bottom-text'>
+          This webapp will display what game you should try and play according on what video game genre you have entered on the input field.
+          <br></br>All data and information is from FreeToGame.com.
+        </p>
       </div>
     </div>
   );
@@ -74,6 +79,10 @@ function Genre(){ // genre component, redirects you to a website that shows list
   rel="noreferrer" 
   target='_blank' 
   className='genre-text'>Click me to know all the video game genres!</a>
+};
+
+function Nogame(){
+  return <h2>Game genre not found.</h2>
 };
 
 export default App;

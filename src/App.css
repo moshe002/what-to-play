@@ -18,7 +18,7 @@
 } 
 
 .App .input {
-  color: whitesmoke;
+  color: white;
   text-align: center;
   font-size: 15.5px;
   outline: none;
@@ -49,21 +49,25 @@
   height: auto;
   padding: 10px 10px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: transparent;
   transition: 0.25s;
+  font-weight: 600;
+  background-color: lightgrey;
+  opacity: 50%;
 }
 
 .App .submit-button:hover {
-  background-color: lightgrey;
+  opacity: 100%;
   cursor: pointer;
 }
 
 .App .bottom-elements {
-  margin-top: 12rem;
+  margin-top: 5rem;
 }
 
 .App .bottom-text {
+  text-align: center;
   padding: 5px 20px;
   color: white;
   opacity: 35%;
@@ -83,3 +87,13 @@
   opacity: 100%;
 }
 
+.game-h1-result {
+  color: white;
+}
+
+.App .game-img {
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 3px black;
+  -webkit-box-shadow: 0 0 3px black;
+  box-shadow: 0 1px 15px black;
+}
