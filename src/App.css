@@ -105,3 +105,9 @@
   font-size: larger;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.App .bottom-link {
+  padding-left: 3px;
+  color: white;
+  outline: none;
+}

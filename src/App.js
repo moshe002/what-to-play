@@ -69,7 +69,14 @@ function App() {
         <Genre />
         <p className='bottom-text'>
           <br></br>Available Game Genres are: shooter, anime, sports, sandbox, 3d, 2d, action, sci-fi and more.
-          <br></br>All data and information is from FreeToGame.com.
+          <br></br>All data and information is from 
+            <a  
+              target='_blank'
+              rel='noreferrer'
+              className='bottom-link' 
+              href='https://www.freetogame.com/'> 
+                FreeToGame.com 
+            </a>.
         </p>
       </div>
     </div>
